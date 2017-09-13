@@ -1,0 +1,97 @@
+body {
+  background-color: #0e1426;
+  margin: 0
+}
+
+#particle {
+  position:fixed;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  z-index:0;
+}
+#overlay {
+  position: relative;
+}
+
+div.nebula-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden
+}
+div.nebula {
+    width: 1400px;
+    height: 1400px;
+    display: block;
+    position: absolute;
+    left: 50%;
+    margin-left: -750px;
+    -webkit-animation: nebula 240s linear infinite;
+    -moz-animation: nebula 240s linear infinite;
+    animation: nebula 240s linear infinite;
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-transform: translate3d(0, 0, 0)
+}
+div.nebula.nebula-1 {
+    background: url(../img/nebula_1.jpg) no-repeat 0 0;
+    top: 0
+}
+/*div.nebula.nebula-2 {
+    background: url(../img/nebula_2.jpg) no-repeat 0 0;
+    top: 1440px
+}
+div.nebula.nebula-3 {
+    background: url(../img/nebula_3.jpg) no-repeat 0 0;
+    top: 3100px
+}
+div.nebula.nebula-4 {
+    background: url(../img/nebula_2.jpg) no-repeat 0 0;
+    top: 4800px
+}*/
+
+@-webkit-keyframes nebula {
+    from {
+        -webkit-transform: rotate(0deg)
+    }
+    to {
+        -webkit-transform: rotate(360deg)
+    }
+}
+@-moz-keyframes nebula {
+    from {
+        -moz-transform: rotate(0deg)
+    }
+    to {
+        -moz-transform: rotate(360deg)
+    }
+}
+@-ms-keyframes nebula {
+    from {
+        -ms-transform: rotate(0deg)
+    }
+    to {
+        -ms-transform: rotate(360deg)
+    }
+}
+@-o-keyframes nebula {
+    from {
+        -o-transform: rotate(0deg)
+    }
+    to {
+        -o-transform: rotate(360deg)
+    }
+}
+@keyframes nebula {
+    from {
+        transform: rotate(0deg)
+    }
+    to {
+        transform: rotate(360deg)
+    }
+}
