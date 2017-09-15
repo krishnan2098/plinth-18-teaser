@@ -15,6 +15,7 @@ window.onload = function() {
   var radiusLimit = (C.width + C.height) / 6;
   var hole_volume = 0;
   var G = .033; //represents the constant of gravity in the system
+  var tap = ('ontouchstart' in window || navigator.msMaxTouchPoints) ? 'touchstart' : 'mousedown';
 
   var R = [];
   var star = function(x, y, r, volume, color, angle, orbitRadius, angularSpeed, randomSpeed0, acceleration, type, pointerX, pointerY) {
@@ -104,7 +105,7 @@ window.onload = function() {
 
   function updateStar(i) {
     var star = R[i];
-    
+
     if(star.type === 0){
       star.x = C.width / 2 + Math.cos(star.angle) * star.orbitRadius;
       star.y = C.height / 2 + Math.sin(star.angle) * star.orbitRadius;
@@ -205,10 +206,9 @@ window.onload = function() {
     pointerY -= Math.sin(angle) * orbitRadius;
     R.push(new star(x, y, r, volume, color, angle, orbitRadius, angularSpeed, randomSpeed0, acceleration, 1, pointerX, pointerY));
   }
-
-  window.addEventListener("click", function(e) {
+  window.addEventListener(tap, function(e) {
     for(var i = 0; i < 50; i++ ){
-      makeTouchStar(1, e.clientX, e.clientY);
+      makeTouchStar(1, e.clientX || e.touches[0].clientX, e.clientY || e.touches[0].clientY);
     }
   }, false);
 }
