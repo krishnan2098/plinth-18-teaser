@@ -9,7 +9,7 @@ window.onload = function() {
   var C = document.getElementById("C");
   var ctx = C.getContext("2d");
 
-  var num = 3333; //you can change the number of stars here
+  var num = 1000; //you can change the number of stars here
   var added_mass = 0; //number of stars eaten :D
   var holeRadius = 30;
   var radiusLimit = (C.width + C.height) / 6;
@@ -17,7 +17,7 @@ window.onload = function() {
   var G = .033; //represents the constant of gravity in the system
 
   var R = [];
-  var star = function(x, y, r, volume, color, angle, orbitRadius, angularSpeed, randomSpeed0, acceleration) {
+  var star = function(x, y, r, volume, color, angle, orbitRadius, angularSpeed, randomSpeed0, acceleration, type, pointerX, pointerY) {
     this.x = x;
     this.y = y;
     this.r = r;
@@ -28,6 +28,9 @@ window.onload = function() {
     this.angularSpeed = angularSpeed;
     this.randomSpeed0 = randomSpeed0;
     this.acceleration = acceleration;
+    this.type = type;
+    this.pointerX = pointerX;
+    this.pointerY = pointerY;
   };
 
   function makeStar(new_star) {
@@ -59,7 +62,7 @@ window.onload = function() {
     randomSpeed0 = Math.random() * (Math.PI / (10 * orbitRadius));
     acceleration = 0;
 
-    R.push(new star(x, y, r, volume, color, angle, orbitRadius, angularSpeed, randomSpeed0, acceleration));
+    R.push(new star(x, y, r, volume, color, angle, orbitRadius, angularSpeed, randomSpeed0, acceleration, 0, 0, 0));
   }
 
   function init() {
@@ -101,9 +104,15 @@ window.onload = function() {
 
   function updateStar(i) {
     var star = R[i];
+    
+    if(star.type === 0){
+      star.x = C.width / 2 + Math.cos(star.angle) * star.orbitRadius;
+      star.y = C.height / 2 + Math.sin(star.angle) * star.orbitRadius;
+    } else {
+      star.x = star.pointerX + Math.cos(star.angle) * star.orbitRadius;
+      star.y = star.pointerY + Math.sin(star.angle) * star.orbitRadius;
+    }
 
-    star.x = C.width / 2 + Math.cos(star.angle) * star.orbitRadius;
-    star.y = C.height / 2 + Math.sin(star.angle) * star.orbitRadius;
     star.angle += star.angularSpeed;
 
     star.acceleration = G * (star.r * hole_volume) / Math.pow(star.orbitRadius, 2) + 0.1;
@@ -162,4 +171,44 @@ window.onload = function() {
   init();
   loop();
 
+  // code for the click animations
+
+  function makeTouchStar(new_star, pointerX, pointerY) {
+    var x,
+      y,
+      r,
+      volume,
+      color,
+      angle,
+      orbitRadius,
+      angularSpeed,
+      randomSpeed0,
+      acceleration;
+
+    x = pointerX;
+    y = pointerY;
+    r = Math.random() * 2 + .5;
+    volume = (4 / 3) * Math.PI * Math.pow(r, 3);
+    color = "rgba(255,255,255,1)";
+    angle = Math.random() * (2 * Math.PI);
+
+    if (new_star == 0) {
+      orbitRadius = (Math.random() * (C.width + C.height)) / 3;
+    } else {
+      orbitRadius = Math.sqrt((C.width / 2 - C.width) * (C.width / 2 - C.width) + (C.height / 2 - C.height) * (C.height / 2 - C.height)) + Math.random() * 200;
+    }
+
+    angularSpeed = .3 * Math.random() * (Math.PI / orbitRadius);
+    randomSpeed0 = Math.random() * (Math.PI / (10 * orbitRadius));
+    acceleration = 0;
+    pointerX -= Math.cos(angle) * orbitRadius;
+    pointerY -= Math.sin(angle) * orbitRadius;
+    R.push(new star(x, y, r, volume, color, angle, orbitRadius, angularSpeed, randomSpeed0, acceleration, 1, pointerX, pointerY));
+  }
+
+  window.addEventListener("click", function(e) {
+    for(var i = 0; i < 50; i++ ){
+      makeTouchStar(1, e.clientX, e.clientY);
+    }
+  }, false);
 }
