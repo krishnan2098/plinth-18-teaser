@@ -4,9 +4,31 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/index.js"></script>
   </head>
 
-  <body>
+  <body onclick="todo()">
+    <div id="wrapper">
+      <div id="header"></div>
+      <div id="header">
+        <img id="logo" src="img/plinthlogo.png" width="100px"/>
+        <img id="text" src="img/plinthtext.png" width="300px"/>
+      </div>
+
+      <div id="footer">
+        <div class="span10 offset1">
+          <div class="social-icons">
+            <ul>
+              <li><a href="https://twitter.com"><i class="icon-twitter"></i></a></li>
+              <li><a href="https://facebook.com"><i class="icon-facebook"></i></a></li>
+              <li><a href="https://instagram.com"><i class="icon-instagram"></i></a></li>
+              <li><a href="https://youtube.com"><i class="icon-youtube"></i></a></li>
+              <li><a href="https://plus.google.com"><i class="icon-google-plus"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
     <canvas id=C></canvas>
     <script src="js/scripts.js"></script>
   </body>
