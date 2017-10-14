@@ -14,10 +14,11 @@ window.onload = function() {
   var holeRadius = 30;
   var radiusLimit = (C.width + C.height) / 6;
   var hole_volume = 0;
-  var G = .033; //represents the constant of gravity in the system
+  var G = .013; //represents the constant of gravity in the system
   var tap = ('ontouchstart' in window || navigator.msMaxTouchPoints)
     ? 'touchstart'
     : 'mousedown';
+  var flag = 0;
 
   var R = [];
   var star = function(x, y, r, volume, color, angle, orbitRadius, angularSpeed, randomSpeed0, acceleration, type, pointerX, pointerY) {
@@ -89,7 +90,7 @@ window.onload = function() {
   function drawCenter() {
     ctx.fillStyle = "#111";
     ctx.shadowColor = "#fff";
-    ctx.shadowBlur = .5 * holeRadius;
+    ctx.shadowBlur = .2 * holeRadius;
 
     ctx.beginPath();
     ctx.arc(C.width / 2, C.height / 2, holeRadius, 0, 2 * Math.PI);
@@ -101,6 +102,9 @@ window.onload = function() {
 
     if (holeRadius <= radiusLimit) {
       holeRadius = 2 * Math.sqrt(added_mass / Math.PI) + 30;
+    } else if (holeRadius > radiusLimit && flag == 0) {
+      flag = 1;
+      todo();
     }
 
   }
@@ -118,14 +122,14 @@ window.onload = function() {
     star.color = "rgba(255," + Math.round(255 * ((Math.abs(star.orbitRadius) - holeRadius) / 200)) + "," + Math.round(255 * ((Math.abs(star.orbitRadius) - holeRadius) / 200)) + ",1)";
 
     if (Math.abs(star.orbitRadius) >= holeRadius) {
-      if(star.orbitRadius >= 0){
+      if (star.orbitRadius >= 0) {
         star.orbitRadius -= star.acceleration;
       } else {
         star.orbitRadius += star.acceleration
       }
 
     } else {
-      added_mass += star.r;
+      added_mass += 15 * star.r;
 
       R.splice(i, 1);
       makeStar(1);
