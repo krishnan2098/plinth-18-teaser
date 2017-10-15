@@ -4,18 +4,16 @@ var footer = document.getElementById("footer");
 var wrapper = document.getElementById("wrapper");
 
 function show() {
-  var el = document.getElementById("wrapper");
-  el.style.opacity = 1;
+  wrapper.style.opacity = 1;
 };
 
 function hide() {
-  var el = document.getElementById("wrapper");
-  el.style.opacity = 0;
+  wrapper.style.opacity = 0;
 }
 
 function fadeIn(el, callback) {
   var tick = function() {
-    el.style.opacity = +el.style.opacity + 0.01;
+    el.style.opacity = +el.style.opacity + 0.008;
 
     if (+ el.style.opacity < 1) {
       (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16)
@@ -32,7 +30,7 @@ function move(elem, callback) {
   var pos = 140;
   var id = setInterval(frame, 5);
   function frame() {
-    if (pos == 10) {
+    if (pos == 0) {
       clearInterval(id);
       if(callback){
         callback();
@@ -49,6 +47,10 @@ function todo() {
   text.style.opacity = 0;
   footer.style.opacity = 0;
   wrapper.style.opacity = 1;
+
+  size = (window.innerWidth + window.innerHeight) / 7.5;
+  console.log(size);
+  wrapper.style.width = size +'px';
 
   fadeIn(logo, function(){
     move(logo, function(){

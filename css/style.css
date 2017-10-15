@@ -9,23 +9,22 @@ html {
 }
 
 #wrapper {
-  width: 20%;
   position: absolute;
   left: 50%;
   top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   opacity: 0;
   z-index: 1000;
-  margin-left: -10%;
-  margin-top: -13%;
   text-align: center;
 }
 
 #text {
-  margin-top: 15%;
+  margin-top: 10%;
 }
 
 #footer {
-  margin-top: 30%;
+  margin-top: 20%;
 }
 
 .universal-inline-block {
@@ -37,8 +36,7 @@ html {
 .social-icons {
   text-align: center;
   font-family: "Open Sans";
-  font-weight: 300;
-  font-size: 1.5em;
+  font-size: 2.5vw;
   color: #448aaf;
 }
 
@@ -57,8 +55,8 @@ html {
 
 .social-icons ul li a {
   display: block;
-  font-size: 1.4em;
-  margin: 0 10px;
+  font-size: 2.5vw;
+  margin: 0 0.8vw;
   text-decoration: none;
 }
 
