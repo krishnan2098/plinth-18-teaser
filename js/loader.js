@@ -12,7 +12,7 @@ for (var i = 0; i < pathEls.length; i++) {
 }
 
 logoTimeline
-  
+
   .add({
   targets: '.fill.in',
   strokeDashoffset: {
@@ -61,6 +61,13 @@ logoTimeline
     duration: 200,
     easing: 'linear'
   },
+  complete: function(anim) {
+    removeDom();
+    setCanvasSize();
+    setBG();
+    init();
+    loop();
+  },
   offset: 0
 })
   .add({
@@ -70,4 +77,3 @@ logoTimeline
   delay: 4200,
   offset: 0
 });
-  
