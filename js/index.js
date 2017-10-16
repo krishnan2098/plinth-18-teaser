@@ -2,6 +2,7 @@ var logo = document.getElementById("logo");
 var text = document.getElementById("text");
 var footer = document.getElementById("footer");
 var wrapper = document.getElementById("wrapper");
+var icons = document.getElementById("icons")
 
 function show() {
   wrapper.style.opacity = 1;
@@ -51,6 +52,7 @@ function todo() {
   size = (window.innerWidth + window.innerHeight) / 7.5;
   console.log(size);
   wrapper.style.width = size +'px';
+  icons.style.fontSize = size/9 +'px';
 
   fadeIn(logo, function(){
     move(logo, function(){
