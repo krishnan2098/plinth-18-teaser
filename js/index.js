@@ -48,8 +48,12 @@ function todo() {
   text.style.opacity = 0;
   footer.style.opacity = 0;
   wrapper.style.opacity = 1;
-
-  size = (window.innerWidth + window.innerHeight) / 7.5;
+  if (window.innerWidth >= window.innerHeight) {
+    size = (window.innerWidth + (2 * window.innerHeight)) / 10;
+  }
+  else if (window.innerWidth < window.innerHeight) {
+    size = ((2 * window.innerWidth) + window.innerHeight) / 10;
+  }
   console.log(size);
   wrapper.style.width = size +'px';
   icons.style.fontSize = size/9 +'px';
