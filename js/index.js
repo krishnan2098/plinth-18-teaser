@@ -48,15 +48,8 @@ function todo() {
   text.style.opacity = 0;
   footer.style.opacity = 0;
   wrapper.style.opacity = 1;
-  if (window.innerWidth > window.innerHeight) {
-    size = (window.innerWidth + window.innerHeight) / 7.5;
-  }
-  else if (window.innerWidth < window.innerHeight) {
-    size = ((2 * window.innerWidth) + window.innerHeight) / 7.5;
-  }
-  console.log(size);
-  wrapper.style.width = size +'px';
-  icons.style.fontSize = size/9 +'px';
+
+  definesize();
 
   fadeIn(logo, function(){
     move(logo, function(){
@@ -66,3 +59,20 @@ function todo() {
     });
   });
 }
+
+function definesize() {
+  if ((1.5 * window.innerWidth) < (window.innerHeight)) {
+    size = ((2 * window.innerWidth) + window.innerHeight) / 7.5;
+  }
+  else {
+    size = (window.innerWidth + window.innerHeight) / 7.5;
+  }
+  console.log(size);
+  wrapper.style.width = size +'px';
+  icons.style.fontSize = size/9 +'px';
+}
+
+window.addEventListener("resize", function(event) {
+    console.log(document.body.clientWidth + ' wide by ' + document.body.clientHeight+' high');
+    definesize();
+})
