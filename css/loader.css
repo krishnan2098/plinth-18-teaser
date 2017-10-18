@@ -1,51 +1,29 @@
 body {
   opacity: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  display: block;
+  justify-content: center;
   background-color: #212121;
 }
 body.ready {
   opacity: 1;
 }
 .logo-animation {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   margin-top:  50px;
 }
 .logo-animation-1 {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   margin-top:  50px;
 }
 .letters {
   margin: 0 auto;
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 1030px;
   height: 162px;
@@ -53,8 +31,6 @@ body.ready {
 .letters-1 {
   margin: 0 auto;
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 710px;
   height: 162px;
@@ -67,8 +43,7 @@ body.ready {
 .letter.letter-i {
   z-index: 1;
   width:27px;
-  -webkit-transform-origin: 100% 50%;
-          transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
 }
 .letter.letter-m-2 {
   margin-left: -27px;

@@ -29,15 +29,15 @@ function fadeIn(el, callback) {
 
 function move(elem, callback) {
   var pos = 140;
-  var id = setInterval(frame, 5);
+  var id = setInterval(frame, 1);
   function frame() {
-    if (pos == 0) {
+    if (pos < 0) {
       clearInterval(id);
       if(callback){
         callback();
       }
     } else {
-      pos--;
+      pos-=3;
       elem.style.marginTop = pos + 'px';
     }
   }
