@@ -10,7 +10,7 @@ function removeDom1(){
 
 window.requestAnimFrame = (function() {
   return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function(callback) {
-    window.setTimeout(callback, 1000 / 60);
+    window.setTimeout(callback, 1000 / 30);
   };
 })();
 
@@ -104,8 +104,6 @@ function drawCenter() {
   ctx.arc(C.width / 2, C.height / 2, holeRadius, 0, 2 * Math.PI);
   ctx.closePath();
   ctx.fill();
-
-  ctx.shadowColor = "none";
   ctx.shadowBlur = 0;
 
   if (holeRadius <= radiusLimit) {

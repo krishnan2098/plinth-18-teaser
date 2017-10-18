@@ -54,7 +54,6 @@ function todo() {
   else if (window.innerWidth < window.innerHeight) {
     size = ((2 * window.innerWidth) + window.innerHeight) / 10;
   }
-  console.log(size);
   wrapper.style.width = size +'px';
   icons.style.fontSize = size/9 +'px';
 
