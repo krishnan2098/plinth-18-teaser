@@ -2,7 +2,9 @@ var logo = document.getElementById("logo");
 var text = document.getElementById("text");
 var footer = document.getElementById("footer");
 var wrapper = document.getElementById("wrapper");
-var icons = document.getElementById("icons")
+var icons = document.getElementById("icons");
+var button = document.getElementById("button");
+
 
 function show() {
   wrapper.style.opacity = 1;
@@ -51,10 +53,12 @@ function todo() {
 
   definesize();
 
-  fadeIn(logo, function(){
-    move(logo, function(){
+  fadeIn(logo, function() {
+    move(logo, function() {
       fadeIn(text, function() {
-        fadeIn(footer);
+        move(null,function() {
+          fadeIn(footer);
+        });
       });
     });
   });
@@ -70,6 +74,8 @@ function definesize() {
   console.log(size);
   wrapper.style.width = size +'px';
   icons.style.fontSize = size/9 +'px';
+  icons.style.width = size + 'px';
+  button.style.fontSize = size/18 +'px';
 }
 
 window.addEventListener("resize", function(event) {

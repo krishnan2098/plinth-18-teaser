@@ -20,7 +20,7 @@ html {
 }
 
 #text {
-  margin-top: 10%;
+  margin-top: 5%;
 }
 
 #footer {
@@ -74,4 +74,26 @@ html {
 .social-icons ul li a:focus i, .social-icons ul li a:active i {
   transition: none;
   color: #a1a1a1;
+}
+
+#button1 {
+    margin-top: 5%;
+}
+#button {
+    padding: 4% 8%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background: none;
+    color: #f1f1f1;
+    border: 2px solid #f1f1f1;
+    border-radius: 8% 8% 8% 8%;
+}
+
+#button:hover {
+    background-color: #ffffff;
+    color: #000000;
 }
