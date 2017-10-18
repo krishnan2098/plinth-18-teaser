@@ -48,11 +48,11 @@ function todo() {
   text.style.opacity = 0;
   footer.style.opacity = 0;
   wrapper.style.opacity = 1;
-  if (window.innerWidth >= window.innerHeight) {
-    size = (window.innerWidth + (2 * window.innerHeight)) / 10;
+  if (window.innerWidth > window.innerHeight) {
+    size = (window.innerWidth + window.innerHeight) / 7.5;
   }
   else if (window.innerWidth < window.innerHeight) {
-    size = ((2 * window.innerWidth) + window.innerHeight) / 10;
+    size = ((2 * window.innerWidth) + window.innerHeight) / 7.5;
   }
   console.log(size);
   wrapper.style.width = size +'px';
