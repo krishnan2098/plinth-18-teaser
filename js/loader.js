@@ -1,9 +1,13 @@
-
+var logoEl = document.querySelector('.logo-animation');
+var logoEl1 = document.querySelector('.logo-animation-1');
 var pathEls = document.querySelectorAll('.logo-animation path:not(.icon-curve)');
 var innerWidth = window.innerWidth;
-var maxWidth = 740;
+var maxWidth = 1200;
 var logoScale = innerWidth <= maxWidth ? innerWidth / maxWidth : 1;
 var logoTimeline = anime.timeline();
+
+logoEl.style.transform = 'translateY(50px) scale('+logoScale+')';
+logoEl1.style.transform = 'translateY(50px) scale('+logoScale+')';
 
 
 for (var i = 0; i < pathEls.length; i++) {
@@ -17,14 +21,14 @@ logoTimeline
   targets: '.fill.in',
   strokeDashoffset: {
     value: [anime.setDashoffset, 0],
-    duration: 600,
-    delay: function(el, i, t) { return 700 + ( i * 100 ); },
+    duration: 1000,
+    delay: function(el, i, t) { return ( i * 100 ); },
     easing: 'easeOutQuart'
   },
   stroke: {
     value: ['#FFF', function(el) { return anime.getValue(el.parentNode, 'stroke') } ],
-    duration: 500,
-    delay: 500,
+    duration: 1000,
+    delay: 0,
     easing: 'easeInQuad'
   },
   opacity: {
@@ -37,43 +41,22 @@ logoTimeline
   .add({
   targets: '.fill.out',
   strokeDashoffset: [
-    { value: [anime.setDashoffset, anime.setDashoffset], duration: 1890 },
+    { value: [anime.setDashoffset, anime.setDashoffset],
+      duration: 1890 },
     {
       value: [0, anime.setDashoffset],
-      duration: 800,
+      duration: 1000,
       delay: function(el, i) { return (i * 80); },
       easing: 'easeInQuart'
     }
   ],
-  offset: 0
-})
-  .add({
-  targets: '.line.out',
-  strokeDashoffset: {
-    value: [0, anime.setDashoffset],
-    duration: 1200,
-    delay: function(el, i, t) { return 2500 + ( i * 100 ); },
-    easing: 'easeInQuart'
-  },
-  strokeWidth: {
-    value: [0, 2],
-    delay: function(el, i, t) { return 2000 + ( i * 100 ); },
-    duration: 200,
-    easing: 'linear'
-  },
   complete: function(anim) {
     removeDom();
+    removeDom1();
     setCanvasSize();
     setBG();
     init();
     loop();
   },
-  offset: 0
-})
-  .add({
-  targets: '.icon',
-  opacity: { value: 1, duration: 10, delay: 2800, easing: 'linear' },
-  translateY: { value: 60, duration: 800 },
-  delay: 4200,
   offset: 0
 });

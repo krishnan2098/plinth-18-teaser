@@ -3,6 +3,11 @@ function removeDom(){
   loaderElement.parentNode.removeChild(loaderElement);
 }
 
+function removeDom1(){
+  var loaderElement = document.getElementById("loader-1");
+  loaderElement.parentNode.removeChild(loaderElement);
+}
+
 window.requestAnimFrame = (function() {
   return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function(callback) {
     window.setTimeout(callback, 1000 / 60);

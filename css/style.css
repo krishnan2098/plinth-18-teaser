@@ -61,9 +61,6 @@ html {
 .social-icons ul li a i {
   color: #ffffff;
   -webkit-transition: all 0.2s ease-in;
-  -moz-transition: all 0.2s ease-in;
-  -o-transition: all 0.2s ease-in;
-  -ms-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
 }
 
@@ -72,6 +69,7 @@ html {
 }
 
 .social-icons ul li a:focus i, .social-icons ul li a:active i {
+  -webkit-transition: none;
   transition: none;
   color: #a1a1a1;
 }
