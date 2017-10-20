@@ -84,8 +84,8 @@ function init() {
 }
 
 function setCanvasSize() {
-  C.width = window.innerWidth;
-  C.height = window.innerHeight;
+  C.width = window.outerWidth;
+  C.height = window.outerHeight;
 
   radiusLimit = (C.width + C.height) / 10;
 }
@@ -135,7 +135,7 @@ function updateStar(i) {
     }
 
   } else {
-    added_mass += 20 * star.r;
+    added_mass += 15 * star.r;
 
     R.splice(i, 1);
     makeStar(1);

@@ -31,7 +31,7 @@ function fadeIn(el, callback) {
 
 function move(elem, callback) {
   var pos = 140;
-  var id = setInterval(frame, 1);
+  var id = setInterval(frame, 2);
   function frame() {
     if (pos < 0) {
       clearInterval(id);
@@ -39,8 +39,10 @@ function move(elem, callback) {
         callback();
       }
     } else {
-      pos-=3;
-      elem.style.marginTop = pos + 'px';
+      pos-=1;
+      if(elem) {
+        elem.style.marginTop = pos + 'px';
+      }
     }
   }
 }
@@ -65,11 +67,11 @@ function todo() {
 }
 
 function definesize() {
-  if ((1.5 * window.innerWidth) < (window.innerHeight)) {
-    size = ((2 * window.innerWidth) + window.innerHeight) / 7.5;
+  if ((1.5 * window.outerWidth) < (window.outerHeight)) {
+    size = ((2 * window.outerWidth) + window.outerHeight) / 7.5;
   }
   else {
-    size = (window.innerWidth + window.innerHeight) / 7.5;
+    size = (window.outerWidth + window.outerHeight) / 7.5;
   }
   console.log(size);
   wrapper.style.width = size +'px';

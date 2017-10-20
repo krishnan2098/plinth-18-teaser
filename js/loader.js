@@ -1,7 +1,7 @@
 var logoEl = document.querySelector('.logo-animation');
 var logoEl1 = document.querySelector('.logo-animation-1');
 var pathEls = document.querySelectorAll('.logo-animation path:not(.icon-curve)');
-var innerWidth = window.innerWidth;
+var innerWidth = window.outerWidth;
 var maxWidth = 1200;
 var logoScale = innerWidth <= maxWidth ? innerWidth / maxWidth : 1;
 var logoTimeline = anime.timeline();
