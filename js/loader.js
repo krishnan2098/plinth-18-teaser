@@ -1,19 +1,12 @@
 var logoEl = document.querySelector('.logo-animation');
 var logoEl1 = document.querySelector('.logo-animation-1');
 var pathEls = document.querySelectorAll('.logo-animation path:not(.icon-curve)');
-var innerWidth = window.outerWidth;
+var innerWidth = document.body.clientWidth;
 var maxWidth = 1200;
 var logoScale = innerWidth <= maxWidth ? innerWidth / maxWidth : 1;
 var logoTimeline = anime.timeline();
 
-logoEl.style.webkitTransform = 'translateY(50px) scale('+logoScale+')';
-logoEl.style.MozTransform = 'translateY(50px) scale('+logoScale+')';
-logoEl.style.OTransform = 'translateY(50px) scale('+logoScale+')';
 logoEl.style.transform = 'translateY(50px) scale('+logoScale+')';
-
-logoEl1.style.webkitTransform = 'translateY(50px) scale('+logoScale+')';
-logoEl1.style.MozTransform = 'translateY(50px) scale('+logoScale+')';
-logoEl1.style.OTransform = 'translateY(50px) scale('+logoScale+')';
 logoEl1.style.transform = 'translateY(50px) scale('+logoScale+')';
 
 for (var i = 0; i < pathEls.length; i++) {

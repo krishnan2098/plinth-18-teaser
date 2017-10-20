@@ -67,11 +67,11 @@ function todo() {
 }
 
 function definesize() {
-  if ((1.5 * window.outerWidth) < (window.outerHeight)) {
-    size = ((2 * window.outerWidth) + window.outerHeight) / 7.5;
+  if ((1.5 * window.innerWidth) < (window.innerHeight)) {
+    size = ((2 * window.innerWidth) + window.innerHeight) / 7.5;
   }
   else {
-    size = (window.outerWidth + window.outerHeight) / 7.5;
+    size = (window.innerWidth + window.innerHeight) / 7.5;
   }
   console.log(size);
   wrapper.style.width = size +'px';

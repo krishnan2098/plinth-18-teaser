@@ -84,8 +84,9 @@ function init() {
 }
 
 function setCanvasSize() {
-  C.width = window.outerWidth;
-  C.height = window.outerHeight;
+  console.log(window.innerWidth, window.innerHeight);
+  C.width = window.innerWidth;
+  C.height = window.innerHeight;
 
   radiusLimit = (C.width + C.height) / 10;
 }
@@ -178,6 +179,10 @@ function loop() {
 window.addEventListener("resize", function() {
   setCanvasSize();
 });
+
+window.onload = function(){
+  setCanvasSize();
+}
 
 //setCanvasSize();
 //setBG();
