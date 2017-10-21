@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+ <title>Contact Us | Plinth 2k18</title>
+ <link rel="favicon icon" href="favicon.ico" />
+ <link rel="stylesheet" href="css/archive.css" />
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+  <div class="container-fluid">
+  <h1><strong>Contact Us</strong></h1>
+  </div>
+
+  <div class="container-fluid" style="margin-top: 20px; color: white; text-align: center;">
+    <div class="row">
+      <i class="fa fa-envelope fa-2x" aria-hidden="true"><strong>      Email :  plinth.lnmiit@gmail.com</strong></i>
+    </div>
+    <div class="row" style="margin-top: 20px;">
+      <i class="fa fa-phone fa-2x" aria-hidden="true"><strong>     Phone :  7272928198</strong></i>
+    </div>
+     
+  </div>
+
+ <div class="container-fluid">
+  
+</div>
+
+  <div class="container-fluid" >
+    <div id="map" style="width:100%;height:50vh;  "></div>
+  </div>
+
+   
+   <div class="social-icons" id="icons">
+    <ul>
+     <li><a href="https://twitter.com/plinthlnmiit?lang=en" target="_blank"><i class="icon-twitter"></i></a></li>
+     <li><a href="https://www.facebook.com/Plinth.LNMIIT/" target="_blank"><i class="icon-facebook"></i></a></li>
+     <li><a href="https://www.instagram.com/plinth.lnmiit/" target="_blank"><i class="icon-instagram"></i></a></li>
+     <li><a href="https://www.youtube.com/user/PlinthLNMIITJaipur" target="_blank"><i class="icon-youtube"></i></a></li>
+    </ul>
+  </div>
+ 
+
+  <script>
+    function initMap() {
+        var uluru = {lat: 26.936338, lng: 75.923539};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 15,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+</script>
+
+ <script 
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCEH9KxT3Q_ss0aKvV4hLeWxajCoUgFvUs&callback=initMap">
+    </script>
+ 
+ 
+</body>
+</html>
