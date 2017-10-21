@@ -123,3 +123,17 @@ a.animated-button:link:hover:after, a.animated-button:visited:hover:after {
   text-decoration: none;
   color: #FFFFFF;
 }
+
+.details {
+  text-align: center;
+  display: block;
+  color: #FFFFFF;
+  margin-top: 20px;
+}
+
+.map {
+  max-width: 1023px;
+  margin: 60px auto 0 auto;
+  width: 80%;
+  height: 50vh;
+}
