@@ -20,7 +20,7 @@ var ctx = C.getContext("2d");
 var num = 2000; //you can change the number of stars here
 var added_mass = 0; //number of stars eaten :D
 var holeRadius = 30;
-var radiusLimit = (C.width + C.height) / 6;
+var radiusLimit = (C.width / 11) + (C.height / 7) ;
 var hole_volume = 0;
 var G = .009; //represents the constant of gravity in the system
 var tap = ('ontouchstart' in window || navigator.msMaxTouchPoints)
@@ -87,7 +87,7 @@ function setCanvasSize() {
   C.width = window.innerWidth;
   C.height = window.innerHeight;
 
-  radiusLimit = (C.width + C.height) / 10;
+  radiusLimit = (C.width / 11) + (C.height / 7) ;
 }
 
 function setBG() {
@@ -108,7 +108,7 @@ function drawCenter() {
 }
 
 function updateRadius() {
-  var x = (radiusLimit - 30) / 350;
+  var x = (radiusLimit - 30) / 250;
   var rad = setInterval(update, 10);
   function update(){
     if(holeRadius >= radiusLimit){
