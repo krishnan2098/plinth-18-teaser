@@ -23,7 +23,7 @@ html {
 }
 
 #text {
-  margin-top: 5%;
+  margin-top: 15%;
 }
 
 #footer {
@@ -93,4 +93,16 @@ html {
   text-decoration: none;
   text-transform: uppercase;
   padding: 5px;
+}
+
+@media only screen and (max-width: 480px) {
+  #button {
+    font-size: 10px;
+  }
+  #text {
+    margin-top: 5%;
+  }
+  #footer {
+    margin-top: 0;
+  }
 }

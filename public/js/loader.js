@@ -53,6 +53,7 @@ logoTimeline
     removeDom();
     removeDom1();
     setCanvasSize();
+    updateRadius();
     setBG();
     init();
     loop();

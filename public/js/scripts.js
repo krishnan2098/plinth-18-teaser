@@ -22,7 +22,7 @@ var added_mass = 0; //number of stars eaten :D
 var holeRadius = 30;
 var radiusLimit = (C.width + C.height) / 6;
 var hole_volume = 0;
-var G = .013; //represents the constant of gravity in the system
+var G = .009; //represents the constant of gravity in the system
 var tap = ('ontouchstart' in window || navigator.msMaxTouchPoints)
   ? 'touchstart'
   : 'mousedown';
@@ -105,14 +105,19 @@ function drawCenter() {
   ctx.closePath();
   ctx.fill();
   ctx.shadowBlur = 0;
+}
 
-  if (holeRadius <= radiusLimit) {
-    holeRadius = 2 * Math.sqrt(added_mass / Math.PI) + 30;
-  } else if (holeRadius > radiusLimit && flag == 0) {
-    flag = 1;
-    todo();
+function updateRadius() {
+  var x = (radiusLimit - 30) / 350;
+  var rad = setInterval(update, 10);
+  function update(){
+    if(holeRadius >= radiusLimit){
+      clearInterval(rad);
+      todo();
+    } else {
+      holeRadius += x;
+    }
   }
-
 }
 
 function updateStar(i) {

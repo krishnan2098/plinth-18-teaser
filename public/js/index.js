@@ -52,33 +52,23 @@ function todo() {
   text.style.opacity = 0;
   footer.style.opacity = 0;
   wrapper.style.opacity = 1;
-
-  definesize();
+  if (window.innerWidth > window.innerHeight) {
+    size = (window.innerWidth + window.innerHeight) / 7.5;
+  }
+  else if (window.innerWidth < window.innerHeight) {
+    size = ((2 * window.innerWidth) + window.innerHeight) / 7.5;
+  }
+  console.log(size);
+  wrapper.style.width = size +'px';
+  icons.style.fontSize = size/9 +'px';
 
   fadeIn(logo, function() {
     move(logo, function() {
       fadeIn(text, function() {
-        move(null,function() {
+        move(null, function(){
           fadeIn(footer);
-        });
+        })
       });
     });
   });
 }
-
-function definesize() {
-  if ((1.5 * window.innerWidth) < (window.innerHeight)) {
-    size = ((2 * window.innerWidth) + window.innerHeight) / 7.5;
-  }
-  else {
-    size = (window.innerWidth + window.innerHeight) / 7.5;
-  }
-  wrapper.style.width = size +'px';
-  icons.style.fontSize = size/9 +'px';
-  icons.style.width = size + 'px';
-  button.style.fontSize = size/18 +'px';
-}
-
-window.addEventListener("resize", function(event) {
-    definesize();
-})
