@@ -1,0 +1,25 @@
+{
+  "name": "plinth-18-teaser",
+  "version": "1.0.0",
+  "description": "Teaser for Plinth, The Techno-Management Literary Fest, The LNM Institute of Information Technology, Jaipur.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karanagarwal17/plinth-18-teaser.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/karanagarwal17/plinth-18-teaser/issues"
+  },
+  "homepage": "https://github.com/karanagarwal17/plinth-18-teaser#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.2",
+    "serve-favicon": "^2.4.5"
+  }
+}

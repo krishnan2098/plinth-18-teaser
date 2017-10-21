@@ -1,0 +1,74 @@
+body {
+  opacity: 1;
+  display: block;
+  justify-content: center;
+  background-color: #212121;
+}
+body.ready {
+  opacity: 1;
+}
+.logo-animation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top:  50px;
+}
+.logo-animation-1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top:  50px;
+}
+.letters {
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  width: 1030px;
+  height: 162px;
+}
+.letters-1 {
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  width: 710px;
+  height: 162px;
+}
+.letter {
+  position: relative;
+  width: 162px;
+  height: 162px;
+}
+.letter.letter-i {
+  z-index: 1;
+  width:27px;
+  transform-origin: 100% 50%;
+}
+.letter.letter-m-2 {
+  margin-left: -27px;
+}
+
+@media only screen and (max-width: 1023px) {
+  .logo-animation-1 {
+    margin-top: 0px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .logo-animation {
+    margin-top: 150px;
+  }
+  .logo-animation-1 {
+    margin-top: -20px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .logo-animation {
+    margin-top: 50px;
+  }
+  .logo-animation-1 {
+    margin-top: -70px;
+  }
+}
