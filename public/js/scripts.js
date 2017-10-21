@@ -84,7 +84,6 @@ function init() {
 }
 
 function setCanvasSize() {
-  console.log(window.innerWidth, window.innerHeight);
   C.width = window.innerWidth;
   C.height = window.innerHeight;
 

@@ -1,5 +1,8 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
 @import url('https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css');
+
 * {
+  font-family: 'Open Sans';
   margin: 0;
   padding: 0;
 }
@@ -74,24 +77,20 @@ html {
   color: #a1a1a1;
 }
 
-#button1 {
-    margin-top: 5%;
-}
 #button {
-    padding: 4% 8%;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-    cursor: pointer;
-    background: none;
-    color: #f1f1f1;
-    border: 2px solid #f1f1f1;
-    border-radius: 8% 8% 8% 8%;
+  margin-top: 5%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+  color: #f1f1f1;
 }
 
-#button:hover {
-    background-color: #ffffff;
-    color: #000000;
+#button a {
+  color: #FFFFFF;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 5px;
 }

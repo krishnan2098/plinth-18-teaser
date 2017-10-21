@@ -73,7 +73,6 @@ function definesize() {
   else {
     size = (window.innerWidth + window.innerHeight) / 7.5;
   }
-  console.log(size);
   wrapper.style.width = size +'px';
   icons.style.fontSize = size/9 +'px';
   icons.style.width = size + 'px';
@@ -81,6 +80,5 @@ function definesize() {
 }
 
 window.addEventListener("resize", function(event) {
-    console.log(document.body.clientWidth + ' wide by ' + document.body.clientHeight+' high');
     definesize();
 })
