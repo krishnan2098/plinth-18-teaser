@@ -73,11 +73,14 @@ body.ready {
   }
 }
 
-@media screen and (orientation:landscape) { 
+@media only screen and (min-device-width: 480px) 
+                   and (max-device-width: 640px) 
+                   and (orientation: landscape) {
   .logo-animation {
     margin-top: -150px;
   }
   .logo-animation-1 {
     margin-top: -20px;
   }
- }
+
+}
