@@ -84,8 +84,11 @@ function init() {
 }
 
 function setCanvasSize() {
-  C.width = window.innerWidth;
-  C.height = window.innerHeight;
+   
+    C.width = screen.width;
+    C.height = screen.height;
+  
+ 
 
   radiusLimit = (C.width / 11) + (C.height / 7) ;
 }
@@ -179,7 +182,9 @@ function loop() {
   drawCenter();
   requestAnimFrame(loop);
 }
-
+window.addEventListener("orientationchange",function(){
+  setCanvasSize();
+});
 window.addEventListener("resize", function() {
   setCanvasSize();
 });
@@ -187,6 +192,8 @@ window.addEventListener("resize", function() {
 window.onload = function(){
   setCanvasSize();
 }
+
+
 
 //setCanvasSize();
 //setBG();

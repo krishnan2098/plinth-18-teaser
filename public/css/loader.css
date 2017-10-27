@@ -72,3 +72,12 @@ body.ready {
     margin-top: -70px;
   }
 }
+
+@media screen and (orientation:landscape) { 
+  .logo-animation {
+    margin-top: -150px;
+  }
+  .logo-animation-1 {
+    margin-top: -20px;
+  }
+ }
